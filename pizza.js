@@ -21,20 +21,31 @@ let x=random(); //მასივის შემთხვევითი ინ
 
 let a=new Date(); // დრო შეკვეთის დაწყებამდე
 
-console.log("თქვენი პიცა ("+ pizzas[x].name+") მზადდება");
+appendStrong("თქვენი პიცა ("+ pizzas[x].name+") მზადდება");
 
 setTimeout(() => {
-    console.log("თქვენი პიცა გზაშია");
+    appendStrong("თქვენი პიცა გზაშია");
 
     
     setTimeout(() => {
-        console.log("თქვენი პიცა ადგილზეა, ფასი - " + pizzas[x].price , "ლარი");
+        appendStrong("თქვენი პიცა ადგილზეა, ფასი - " + pizzas[x].price , "ლარი");
         
         let b = new Date(); // დრო შეკვეთის დასრულებისას
         let shekvetisDro=(b - a);
     
-        console.log ("შეკვეთის დრო: " + shekvetisDro / 1000, "წამი");
+        appendStrong("შეკვეთის დრო: " + shekvetisDro / 1000, "წამი");
     }, 5000);
     
 }, 2000);
+
+function appendStrong(text){
+    let strong=document.createElement("strong");
+    strong.textContent = text;
+
+    let status = document.getElementById("status");
+    status.appendChild(strong);
+    
+    let br=document.createElement("br");
+    status.appendChild(br);
+}
 
