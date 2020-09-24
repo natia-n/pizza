@@ -13,11 +13,11 @@ const pizzas=[
     }
 ];
 
-function random(){
-    return Math.floor(Math.random() * pizzas.length);
+function random(a, b){
+    return Math.floor(Math.random() * (b-a)+a);
 };
 
-let x=random(); //მასივის შემთხვევითი ინდექსი
+let x=random(0, pizzas.length); //მასივის შემთხვევითი ინდექსი
 
 let a=new Date(); // დრო შეკვეთის დაწყებამდე
 
